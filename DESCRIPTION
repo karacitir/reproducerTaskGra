@@ -6,6 +6,7 @@ Author: Itir Karac <itir.karac@gmail.com>
 Maintainer: Itir Karac <itir.karac@gmail.com>
 Description: Includes functions for reproducing results of data analysis in Task Description Granularity Study.
 License: CC BY 4.0
+Depends: R (>= 2.10)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.0
