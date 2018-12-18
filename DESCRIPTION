@@ -16,3 +16,5 @@ Imports:
     dplyr,
     magrittr,
     nlme
+URL: https://github.com/M3SOulu/reproducerTaskGra
+BugReports: https://github.com/M3SOulu/reproducerTaskGra/issues
