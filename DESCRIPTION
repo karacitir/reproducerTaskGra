@@ -18,6 +18,7 @@ Imports:
     nlme,
     MuMIn,
     psych,
-    rlang
+    rlang,
+    ggplot2
 URL: https://github.com/M3SOulu/reproducerTaskGra
 BugReports: https://github.com/M3SOulu/reproducerTaskGra/issues
