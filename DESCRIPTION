@@ -15,6 +15,9 @@ Suggests:
 Imports: 
     dplyr,
     magrittr,
-    nlme
+    nlme,
+    MuMIn,
+    psych,
+    rlang
 URL: https://github.com/M3SOulu/reproducerTaskGra
 BugReports: https://github.com/M3SOulu/reproducerTaskGra/issues

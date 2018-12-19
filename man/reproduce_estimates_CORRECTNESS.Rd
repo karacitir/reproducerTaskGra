@@ -2,16 +2,16 @@
 % Please edit documentation in R/lmm_funcions.R
 \name{reproduce_estimates_CORRECTNESS}
 \alias{reproduce_estimates_CORRECTNESS}
-\title{Reproduce the estimates for fixed effects for CORRECTNESS}
+\title{Reproduce the estimates of fixed effects for CORRECTNESS}
 \usage{
 reproduce_estimates_CORRECTNESS()
 }
 \value{
-a data frame which contains the estimates for fixed effects Task and Task Description Granularity
+a data frame which contains the estimates of fixed effects Task and Task Description Granularity
 obtained with the the linear mixed-effects model fit for Correctness
 }
 \description{
-Reproduce the estimates for fixed effects for CORRECTNESS
+Reproduce the estimates of fixed effects for CORRECTNESS
 }
 \examples{
 reproduce_estimates_CORRECTNESS()
