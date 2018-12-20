@@ -1,0 +1,62 @@
+---
+title: "Data Analysis Results"
+author: "Itir Karac"
+date: "`r Sys.Date()`"
+output:
+  rmarkdown::html_vignette:
+    fig_caption: yes
+    fig_width: 6
+    fig_height: 6
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.align = "center"
+)
+```
+
+```{r}
+library(reproducerTaskGra)
+```
+
+## Participant Demographics
+
+```{r participant_demographics, fig.cap = "Figure 1" }
+  reproduce_barplot_participants()
+```
+
+
+## Statistical Data Analysis
+
+### Functional Correctness
+
+#### Descriptive statistics
+
+```{r descriptive_stats_COR}
+knitr::kable(reproduce_descriptive_stats_CORRECTNESS())
+```
+
+#### Plots
+```{r, fig.cap = "Figure X" }
+  reproduce_violin_plot_CORRECTNESS()
+```
+
+### Functional Completeness
+
+#### Descriptive statistics
+
+```{r descriptive_stats_COMP}
+knitr::kable(reproduce_descriptive_stats_COMPLETENESS())
+```
+
+#### Plots
+```{r, fig.cap = "Figure X" }
+  reproduce_violin_plot_COMPLETENESS()
+```
+([via](http://eatdd.oulu.fi))

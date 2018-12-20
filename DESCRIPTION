@@ -11,7 +11,9 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.0
 Suggests: 
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
 Imports: 
     dplyr,
     magrittr,
@@ -19,6 +21,8 @@ Imports:
     MuMIn,
     psych,
     rlang,
-    ggplot2
+    ggplot2,
+    tidyr
 URL: https://github.com/M3SOulu/reproducerTaskGra
 BugReports: https://github.com/M3SOulu/reproducerTaskGra/issues
+VignetteBuilder: knitr

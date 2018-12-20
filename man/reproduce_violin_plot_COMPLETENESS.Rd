@@ -7,7 +7,7 @@
 reproduce_violin_plot_COMPLETENESS()
 }
 \value{
-an object of class ggplot
+an object of class ggplot containing the violin plot of Completeness
 }
 \description{
 Reproduce violin plot for Completeness

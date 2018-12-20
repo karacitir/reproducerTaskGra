@@ -10,6 +10,94 @@ reproduce_lmm_CORRECTNESS <- function() {
   lmm_CORRECTNESS
 }
 
+#' Reproduce alternative lmm model 1 for Correctness
+#'
+#' @return an object of class lme which represents the Model 1 for Correctness
+#' @export
+#'
+#' @examples reproduce_lmm_CORRECTNESS_1()
+reproduce_lmm_CORRECTNESS_1 <- function() {
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ 1, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X
+}
+
+#' Reproduce alternative lmm model 2 for Correctness
+#'
+#' @return an object of class lme which represents the Model 2 for Correctness
+#' @export
+#'
+#' @examples reproduce_lmm_CORRECTNESS_2()
+reproduce_lmm_CORRECTNESS_2 <- function() {
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X
+}
+
+#' Reproduce alternative lmm model 3 for Correctness
+#'
+#' @return an object of class lme which represents the Model 3 for Correctness
+#' @export
+#'
+#' @examples reproduce_lmm_CORRECTNESS_3()
+reproduce_lmm_CORRECTNESS_3 <- function() {
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + TASK, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X
+}
+
+#' Reproduce alternative lmm model 4 for Correctness
+#'
+#' @return an object of class lme which represents the Model 4 for Correctness
+#' @export
+#'
+#' @examples reproduce_lmm_CORRECTNESS_4()
+reproduce_lmm_CORRECTNESS_4 <- function() {
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + TASK + SEQUENCE, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X
+}
+
+#' Reproduce alternative lmm model 5 for Correctness
+#'
+#' @return an object of class lme which represents the Model 5 for Correctness
+#' @export
+#'
+#' @examples reproduce_lmm_CORRECTNESS_5()
+reproduce_lmm_CORRECTNESS_5 <- function() {
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + TASK + EXP_PROGRAMMING, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X
+}
+
+#' Reproduce alternative lmm model 6 for Correctness
+#'
+#' @return an object of class lme which represents the Model 6 for Correctness
+#' @export
+#'
+#' @examples reproduce_lmm_CORRECTNESS_6()
+reproduce_lmm_CORRECTNESS_6 <- function() {
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + TASK + EXP_JAVA, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X
+}
+
+#' Reproduce alternative lmm model 7 for Correctness
+#'
+#' @return an object of class lme which represents the Model 7 for Correctness
+#' @export
+#'
+#' @examples reproduce_lmm_CORRECTNESS_7()
+reproduce_lmm_CORRECTNESS_7 <- function() {
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + + EXP_JAVA + EXP_LEVEL_UNIT_TESTING, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X
+}
+
+#' Reproduce alternative lmm model 8 for Correctness
+#'
+#' @return an object of class lme which represents the Model 8 for Correctness
+#' @export
+#'
+#' @examples reproduce_lmm_CORRECTNESS_8()
+reproduce_lmm_CORRECTNESS_8 <- function() {
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + EXP_JAVA + EXP_LEVEL_TDD, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X
+}
+
 #' Reproduce the estimates of fixed effects for CORRECTNESS
 #'
 #' @return a data frame which contains the estimates of fixed effects Task and Task Description Granularity

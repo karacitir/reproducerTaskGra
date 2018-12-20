@@ -1,6 +1,16 @@
 #' @keywords internal
 #' @importFrom stats IQR mad median qt sd
 #' @importFrom rlang .data
-#' @importFrom ggplot2 ggplot aes_string geom_violin geom_dotplot theme xlab ylab stat_summary aes scale_y_continuous
-#' @importFrom ggplot2 scale_x_continuous scale_x_discrete
+#' @importFrom ggplot2 ggplot aes_string aes
+#' @importFrom ggplot2 scale_y_continuous scale_x_continuous scale_x_discrete
+#' @importFrom ggplot2 geom_violin geom_dotplot geom_bar geom_text
+#' @importFrom ggplot2 scale_fill_brewer
+#' @importFrom ggplot2 theme theme_minimal
+#' @importFrom ggplot2 position_dodge2
+#' @importFrom ggplot2 element_blank element_text
+#' @importFrom ggplot2 xlab ylab stat_summary
+#'
+#' @importFrom dplyr select filter rename mutate distinct mutate_at
+#' @importFrom dplyr contains funs count vars
+#' @importFrom tidyr gather
 "_PACKAGE"

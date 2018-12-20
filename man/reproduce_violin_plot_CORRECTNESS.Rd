@@ -7,7 +7,7 @@
 reproduce_violin_plot_CORRECTNESS()
 }
 \value{
-an object of class ggplot
+an object of class ggplot containing the violin plot of Correctness
 }
 \description{
 Reproduce violin plot for Correctness
