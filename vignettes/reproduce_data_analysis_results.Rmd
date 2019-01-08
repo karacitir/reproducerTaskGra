@@ -31,7 +31,6 @@ library(reproducerTaskGra)
   reproduce_barplot_participants()
 ```
 
-
 ## Statistical Data Analysis
 
 ### Functional Correctness

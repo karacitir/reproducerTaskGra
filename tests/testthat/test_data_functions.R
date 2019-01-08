@@ -8,7 +8,7 @@ test_that(
   {
     data <- get_data()
     expect_equal(nrow(data), 96)
-    expect_equal(ncol(data), 21)
+    expect_equal(ncol(data), 19)
   }
 )
 
