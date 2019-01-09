@@ -9,15 +9,20 @@ License: CC BY 4.0
 Depends: R (>= 2.10)
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 Suggests: 
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
 Imports: 
     dplyr,
     magrittr,
     nlme,
     MuMIn,
     psych,
-    rlang
+    rlang,
+    ggplot2,
+    tidyr
 URL: https://github.com/M3SOulu/reproducerTaskGra
 BugReports: https://github.com/M3SOulu/reproducerTaskGra/issues
+VignetteBuilder: knitr
