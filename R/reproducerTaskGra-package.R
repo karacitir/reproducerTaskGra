@@ -10,7 +10,10 @@
 #' @importFrom ggplot2 element_blank element_text
 #' @importFrom ggplot2 xlab ylab stat_summary
 #' @importFrom ggplot2 facet_grid
-#' @importFrom dplyr select filter rename mutate distinct mutate_at
+#' @importFrom gridExtra grid.arrange
+#' @importFrom dplyr select filter rename mutate distinct mutate_at mutate_if
 #' @importFrom dplyr contains funs count vars
+#' @importFrom tibble rownames_to_column
 #' @importFrom tidyr gather
+#' @importFrom nlme intervals
 "_PACKAGE"
