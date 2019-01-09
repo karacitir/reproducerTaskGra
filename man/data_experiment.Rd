@@ -4,7 +4,7 @@
 \name{data_experiment}
 \alias{data_experiment}
 \title{Oulu Task Description Granularity Experiment Dataset}
-\format{A data frame with 96 rows and 21 variables:
+\format{A data frame with 96 rows and 19 variables:
 \describe{
   \item{ParticipantID}{Identifier assigned to the participant}
   \item{TASK}{The name of the implemented task: BSK or MR}
@@ -12,18 +12,16 @@
   \item{SEQUENCE}{The sequence that the participant was randomly assgined to: Sequence 1 or Sequence 2}
   \item{COR}{CORRECTNESS metric value of the software delivered by the participant}
   \item{COMP}{COMPLETENESS metric value of the software delivered by the participant}
-  \item{TESTS}{Number of tests implemented by the partiipant}
   \item{TDD_CONF_BESOURO}{TDD Conformance score computed according  to the Besouro tool}
-  \item{EPISODES}{Number of development episodes identified by the Besouro tool}
   \item{TDD_CONF_SELF}{Participant's self assessment of their TDD Conformance on a scale of 0 to 100}
   \item{EXP_PROGRAMMING}{Participant's experience on programming}
   \item{EXP_JAVA}{Participant's experience on Java}
-  \item{EXP_LEVEL_PROGRAMMING}{Participant's self assessment of their experience level in programming (None, Novice, Intermediate, Expert)}
-  \item{EXP_LEVEL_JAVA}{Participant's self assessment of their experience level in Java (None, Novice, Intermediate, Expert)}
-  \item{EXP_LEVEL_ECLIPSE}{Participant's self assessment of their experience level in Eclipse IDE (None, Novice, Intermediate, Expert)}
-  \item{EXP_LEVEL_UNIT_TESTING}{Participant's self assessment of their experience level in Unit Testing (None, Novice, Intermediate, Expert)}
-  \item{EXP_LEVEL_JUNIT}{Participant's self assessment of their experience level in jUnit (None, Novice, Intermediate, Expert)}
-  \item{EXP_LEVEL_TDD}{Participant's self assessment of their experience level in TDD (None, Novice, Intermediate, Expert)}
+  \item{EXP_PROGRAMMING_LEVEL}{Participant's self assessment of their experience level in programming (None, Novice, Intermediate, Expert)}
+  \item{EXP_JAVA_LEVEL}{Participant's self assessment of their experience level in Java (None, Novice, Intermediate, Expert)}
+  \item{EXP_ECLIPSE_LEVEL}{Participant's self assessment of their experience level in Eclipse IDE (None, Novice, Intermediate, Expert)}
+  \item{EXP_UNIT_TESTING_LEVEL}{Participant's self assessment of their experience level in Unit Testing (None, Novice, Intermediate, Expert)}
+  \item{EXP_JUNIT_LEVEL}{Participant's self assessment of their experience level in jUnit (None, Novice, Intermediate, Expert)}
+  \item{EXP_TDD_LEVEL}{Participant's self assessment of their experience level in TDD (None, Novice, Intermediate, Expert)}
   \item{Difficulty}{Participant's assessment of the difficulty of the task (Trivial, Easy, Of average difficulty, Somewhat difficult, Difficult)}
   \item{Specification}{Participant's assessment of the adequacy of the task specification (Adequate, Somewhat adequate, Neither adequate, nor inadequate, Somewhat inadequate, Inadequate)}
   \item{Comprehensibility}{Participant's assessment of the comprehensibility of the task specification (Comprehensible, Somewhat Comprehensible, Neither Comprehensible, nor incomprehensible, Somewhat incomprehensible, Incomprehensible)}

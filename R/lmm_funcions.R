@@ -83,7 +83,7 @@ reproduce_lmm_CORRECTNESS_6 <- function() {
 #'
 #' @examples reproduce_lmm_CORRECTNESS_7()
 reproduce_lmm_CORRECTNESS_7 <- function() {
-  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + + EXP_JAVA + EXP_LEVEL_UNIT_TESTING, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + + EXP_JAVA + EXP_UNIT_TESTING_LEVEL, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
   lmm_CORRECTNESS_X
 }
 
@@ -94,7 +94,7 @@ reproduce_lmm_CORRECTNESS_7 <- function() {
 #'
 #' @examples reproduce_lmm_CORRECTNESS_8()
 reproduce_lmm_CORRECTNESS_8 <- function() {
-  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + EXP_JAVA + EXP_LEVEL_TDD, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + EXP_JAVA + EXP_TDD_LEVEL, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
   lmm_CORRECTNESS_X
 }
 

@@ -54,12 +54,12 @@ reproduce_barplot_participants <- function(){
     dplyr::select("ParticipantID", contains("EXP")) %>%
     dplyr::distinct() %>%
     dplyr::mutate_at(vars(contains("EXP")), funs(factor(., levels=responseScale, ordered = TRUE))) %>%
-    dplyr::rename("Prog." = .data$EXP_LEVEL_PROGRAMMING) %>%
-    dplyr::rename(Java = .data$EXP_LEVEL_JAVA) %>%
-    dplyr::rename("Unit Test." = .data$EXP_LEVEL_UNIT_TESTING) %>%
-    dplyr::rename(TDD = .data$EXP_LEVEL_TDD) %>%
-    dplyr::rename(JUnit = .data$EXP_LEVEL_JUNIT) %>%
-    dplyr::rename("Eclipse" = .data$EXP_LEVEL_ECLIPSE)
+    dplyr::rename("Prog." = .data$EXP_PROGRAMMING_LEVEL) %>%
+    dplyr::rename(Java = .data$EXP_JAVA_LEVEL) %>%
+    dplyr::rename("Unit Test." = .data$EXP_UNIT_TESTING_LEVEL) %>%
+    dplyr::rename(TDD = .data$EXP_TDD_LEVEL) %>%
+    dplyr::rename(JUnit = .data$EXP_JUNIT_LEVEL) %>%
+    dplyr::rename("Eclipse" = .data$EXP_ECLIPSE_LEVEL)
 
   freqTableExperienceSurvey <- dataExperienceSurvey %>%
     dplyr::select(.data$ParticipantID, surveyQuestions) %>%
