@@ -98,7 +98,7 @@ reproduce_lmm_CORRECTNESS_8 <- function() {
   lmm_CORRECTNESS_X
 }
 
-#' Reproduce the estimates of fixed effects for CORRECTNESS
+#' Reproduce the estimates of fixed effects, standard errors and confidence intervals for CORRECTNESS
 #'
 #' @return a data frame which contains the estimates of fixed effects Task and Task Description Granularity
 #' obtained with the the linear mixed-effects model fit for Correctness
@@ -108,8 +108,15 @@ reproduce_lmm_CORRECTNESS_8 <- function() {
 reproduce_estimates_CORRECTNESS <- function() {
   # reproduce the lmm for Correctness
   lmm_CORRECTNESS <- reproduce_lmm_CORRECTNESS()
-  # Extract the estimates of fixed effects from the summary of the lmm for Correctness
-  as.data.frame(summary(lmm_CORRECTNESS)[["tTable"]])
+  # Get parameter estimates from tTable in summary.lme
+  # append confidence intervals
+  as.data.frame(cbind(summary(lmm_CORRECTNESS)[["tTable"]], intervals(lmm_CORRECTNESS)[["fixed"]])) %>%
+    rownames_to_column(var="Parameter") %>%
+    rename("Estimate" = .data$Value) %>%
+    rename("SE" = .data$Std.Error) %>%
+    mutate_if(is.numeric, round, digits=2) %>%
+    mutate("95% CI" = paste("(", .data$lower, ", ", .data$upper, ")", sep="")) %>%
+    select("Parameter", "Estimate", "SE", "95% CI")
 }
 
 #' Reproduce the hypothesis tests of fixed effects for Correctness
@@ -123,7 +130,7 @@ reproduce_hypothesis_testing_CORRECTNESS <- function() {
   # reproduce the lmm for Correctness
   lmm_CORRECTNESS <- reproduce_lmm_CORRECTNESS()
   # Obtain the Wald test statistcs using anova.lme
-  nlme::anova.lme(lmm_CORRECTNESS)
+  nlme::anova.lme(lmm_CORRECTNESS, type="marginal", adjustSigma = F)
 }
 
 #' Reproduce the model fit statistics for the linear-mixed model which represents

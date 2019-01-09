@@ -22,7 +22,9 @@ Imports:
     psych,
     rlang,
     ggplot2,
-    tidyr
+    tidyr,
+    tibble,
+    gridExtra
 URL: https://github.com/M3SOulu/reproducerTaskGra
 BugReports: https://github.com/M3SOulu/reproducerTaskGra/issues
 VignetteBuilder: knitr
