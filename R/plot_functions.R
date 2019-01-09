@@ -25,7 +25,9 @@ reproduce_violin_plot_COMPLETENESS <- function(){
 #'
 #' @examples reproduce_boxplot_CORRECTNESS()
 reproduce_boxplot_CORRECTNESS <- function() {
-  create_boxplot(reproducerTaskGra::data_experiment, "TASK_GRA", "COR", "TASK")
+  p1 <- create_boxplot(reproducerTaskGra::data_experiment, "TASK_GRA", "COR", "TASK")
+  p2 <- create_boxplot(reproducerTaskGra::data_experiment, "TASK_GRA", "COR", "SEQUENCE")
+  grid.arrange(p1, p2, ncol = 2, nrow = 1)
 }
 
 #' Reproduce box plot for Completeness
