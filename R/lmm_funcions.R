@@ -133,6 +133,26 @@ reproduce_hypothesis_testing_CORRECTNESS <- function() {
   nlme::anova.lme(lmm_CORRECTNESS, type="marginal", adjustSigma = F)
 }
 
+#' Reproduce the confidence intervals for estimates of fixed effects for CORRECTNESS
+#'
+#' @return a data frame with parameter name, estimate of fixed effect, standard error and
+#' 95% confidence interval limits
+#' @export
+#'
+#' @examples reproduce_confidence_intervals_CORRECTNESS()
+reproduce_confidence_intervals_CORRECTNESS <- function() {
+  # reproduce the lmm for Correctness
+  lmm_CORRECTNESS <- reproduce_lmm_CORRECTNESS()
+  #obtain confidence intervals
+  as.data.frame(cbind(summary(lmm_CORRECTNESS)[["tTable"]], intervals(lmm_CORRECTNESS)[["fixed"]])) %>%
+    rownames_to_column(var = "Parameter") %>%
+    rename(Estimate = .data$Value) %>%
+    rename(SE = .data$Std.Error) %>%
+    mutate_if(is.numeric, round, digits = 2) %>%
+    mutate(`95% CI` = paste("(", .data$lower, ", ", .data$upper, ")", sep = "")) %>%
+    select("Parameter", "Estimate", "SE", "95% CI")
+}
+
 #' Reproduce the model fit statistics for the linear-mixed model which represents
 #' the linear mixed-effects model fit for CORRECTNESS
 #'
@@ -145,18 +165,15 @@ reproduce_hypothesis_testing_CORRECTNESS <- function() {
 reproduce_model_fit_statistics_CORRECTNESS <- function() {
   # reproduce the lmm for Correctness
   lmm_CORRECTNESS <- reproduce_lmm_CORRECTNESS()
-  # compute model fit statistics
-  model_fit_R2m <- MuMIn::r.squaredGLMM(lmm_CORRECTNESS)[1]
-  model_fit_R2c <- MuMIn::r.squaredGLMM(lmm_CORRECTNESS)[2]
-  model_fit_AIC <- stats::AIC(lmm_CORRECTNESS)
-  model_fit_BIC <- stats::BIC(lmm_CORRECTNESS)
-  model_fit_LL <- stats::logLik(lmm_CORRECTNESS)
-  # return the statistics as a list
-  model_fit_statistics <- list("R2m" = model_fit_R2m,
-                               "R2c" = model_fit_R2c,
-                               "AIC" = model_fit_AIC,
-                               "BIC" = model_fit_BIC,
-                               "LL"= model_fit_LL)
+  # compute model fit statistics and return the statistics as data.frame
+  model_fit_statistics <- data.frame("R2m" = MuMIn::r.squaredGLMM(lmm_CORRECTNESS)[1],
+                                     "R2c" = MuMIn::r.squaredGLMM(lmm_CORRECTNESS)[2],
+                                     "AIC" = stats::AIC(lmm_CORRECTNESS),
+                                     "BIC" = stats::BIC(lmm_CORRECTNESS),
+                                     "LL"= stats::logLik(lmm_CORRECTNESS)) %>%
+    mutate_at(vars(.data$R2m, .data$R2c), funs(round(. * 100, 2))) %>%
+    mutate_all(funs(round(., 2)))
+
   model_fit_statistics
 }
 
@@ -193,5 +210,49 @@ reproduce_estimates_COMPLETENESS <- function() {
 #' @examples reproduce_hypothesis_testing_COMPLETENESS()
 reproduce_hypothesis_testing_COMPLETENESS <- function() {
   lmm_COMPLETENESS <- reproduce_lmm_COMPLETENESS()
-  nlme::anova.lme(lmm_COMPLETENESS)
+  nlme::anova.lme(lmm_COMPLETENESS, type="marginal", adjustSigma = F)
+}
+
+#' Reproduce the confidence intervals for estimates of fixed effects for COMPLETENESS
+#'
+#' @return a data frame with parameter name, estimate of fixed effect, standard error and
+#' 95% confidence interval limits
+#' @export
+#'
+#' @examples reproduce_confidence_intervals_COMPLETENESS()
+reproduce_confidence_intervals_COMPLETENESS <- function() {
+  # reproduce the lmm for Correctness
+  lmm_COMPLETENESS <- reproduce_lmm_COMPLETENESS()
+  #obtain confidence intervals
+  as.data.frame(cbind(summary(lmm_COMPLETENESS)[["tTable"]], intervals(lmm_COMPLETENESS)[["fixed"]])) %>%
+    rownames_to_column(var = "Parameter") %>%
+    rename(Estimate = .data$Value) %>%
+    rename(SE = .data$Std.Error) %>%
+    mutate_if(is.numeric, round, digits = 2) %>%
+    mutate(`95% CI` = paste("(", .data$lower, ", ", .data$upper, ")", sep = "")) %>%
+    select("Parameter", "Estimate", "SE", "95% CI")
+}
+
+#' Reproduce the model fit statistics for the linear-mixed model which represents
+#' the linear mixed-effects model fit for COMPLETENESS
+#'
+#' @return a dataframe containing marginal R-squared (R2m), conditional R-squared (R2c),
+#' Akaike's Information Criterion (AIC), Schwarz's Bayesian criterion (BIC), and
+#' log-likelihood values
+#' @export
+#'
+#' @examples reproduce_model_fit_statistics_COMPLETENESS()
+reproduce_model_fit_statistics_COMPLETENESS <- function() {
+  # reproduce the lmm for Correctness
+  lmm_COMPLETENESS <- reproduce_lmm_COMPLETENESS()
+  # compute model fit statistics and return the statistics as a data.frame
+  model_fit_statistics <- data.frame("R2m" = MuMIn::r.squaredGLMM(lmm_COMPLETENESS)[1],
+                                     "R2c" = MuMIn::r.squaredGLMM(lmm_COMPLETENESS)[2],
+                                     "AIC" = stats::AIC(lmm_COMPLETENESS),
+                                     "BIC" = stats::BIC(lmm_COMPLETENESS),
+                                     "LL"= stats::logLik(lmm_COMPLETENESS)) %>%
+    mutate_at(vars(.data$R2m, .data$R2c), funs(round(. * 100, 2))) %>%
+    mutate_all(funs(round(., 2)))
+
+  model_fit_statistics
 }

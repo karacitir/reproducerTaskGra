@@ -11,7 +11,7 @@
 #' @importFrom ggplot2 xlab ylab stat_summary
 #' @importFrom ggplot2 facet_grid
 #' @importFrom gridExtra grid.arrange
-#' @importFrom dplyr select filter rename mutate distinct mutate_at mutate_if
+#' @importFrom dplyr select filter rename mutate distinct mutate_at mutate_if mutate_all
 #' @importFrom dplyr contains funs count vars
 #' @importFrom tibble rownames_to_column
 #' @importFrom tidyr gather

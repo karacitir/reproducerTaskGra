@@ -12,7 +12,7 @@
 
 <meta name="author" content="Itir Karac" />
 
-<meta name="date" content="2019-01-09" />
+<meta name="date" content="2019-01-16" />
 
 <title>Data Analysis Results</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Data Analysis Results</h1>
 <h4 class="author"><em>Itir Karac</em></h4>
-<h4 class="date"><em>2019-01-09</em></h4>
+<h4 class="date"><em>2019-01-16</em></h4>
 
 
 
@@ -199,9 +199,9 @@ Fig. 3. Boxplots for CORRECTNESS shown separately on different tasks and sequenc
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Number of Observations: 96</span>
 <span class="co">#&gt; Number of Groups: 48</span>
-knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">reproduce_estimates_CORRECTNESS</span>(), <span class="dt">caption =</span> <span class="st">&quot;TABLE 6 Estimates of fixed effects for CORRECTNESS&quot;</span>)</code></pre></div>
+knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">reproduce_estimates_CORRECTNESS</span>(), <span class="dt">caption =</span> <span class="st">&quot;Estimates of fixed effects for CORRECTNESS&quot;</span>)</code></pre></div>
 <table>
-<caption>TABLE 6 Estimates of fixed effects for CORRECTNESS</caption>
+<caption>Estimates of fixed effects for CORRECTNESS</caption>
 <thead>
 <tr class="header">
 <th align="left">Parameter</th>
@@ -234,9 +234,9 @@ knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">re
 </div>
 <div id="hypothesis-tests" class="section level4">
 <h4>Hypothesis Tests</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">reproduce_hypothesis_testing_CORRECTNESS</span>(), <span class="dt">caption =</span> <span class="st">&quot;TABLE 7 Tests of fixed effects for CORRECTNESS&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">reproduce_hypothesis_testing_CORRECTNESS</span>(), <span class="dt">caption =</span> <span class="st">&quot;Tests of fixed effects for CORRECTNESS&quot;</span>)</code></pre></div>
 <table>
-<caption>TABLE 7 Tests of fixed effects for CORRECTNESS</caption>
+<caption>Tests of fixed effects for CORRECTNESS</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -251,22 +251,90 @@ knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">re
 <td>(Intercept)</td>
 <td align="right">1</td>
 <td align="right">47</td>
-<td align="right">333.92803</td>
+<td align="right">252.73312</td>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
 <td>TASK_GRA</td>
 <td align="right">1</td>
 <td align="right">46</td>
-<td align="right">14.77097</td>
-<td align="right">0.0003707</td>
+<td align="right">12.97739</td>
+<td align="right">0.0007707</td>
 </tr>
 <tr class="odd">
 <td>TASK</td>
 <td align="right">1</td>
 <td align="right">46</td>
-<td align="right">49.88329</td>
+<td align="right">51.49243</td>
 <td align="right">0.0000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="confidence-intervals" class="section level4">
+<h4>Confidence Intervals</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">reproduce_confidence_intervals_CORRECTNESS</span>(), <span class="dt">caption =</span> <span class="st">&quot;Confidence intervals for estimates of fixed effects for CORRECTNESS&quot;</span>)</code></pre></div>
+<table>
+<caption>Confidence intervals for estimates of fixed effects for CORRECTNESS</caption>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="right">Estimate</th>
+<th align="right">SE</th>
+<th align="left">95% CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">6.26</td>
+<td align="right">0.40</td>
+<td align="left">(5.47, 7.05)</td>
+</tr>
+<tr class="even">
+<td align="left">TASK_GRAfiner-grained</td>
+<td align="right">1.25</td>
+<td align="right">0.35</td>
+<td align="left">(0.55, 1.95)</td>
+</tr>
+<tr class="odd">
+<td align="left">TASKMR</td>
+<td align="right">-2.49</td>
+<td align="right">0.35</td>
+<td align="left">(-3.19, -1.79)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="effect-size" class="section level4">
+<h4>Effect Size</h4>
+</div>
+<div id="assessment-of-model-validity" class="section level4">
+<h4>Assessment of Model Validity</h4>
+</div>
+<div id="assessment-of-model-fit" class="section level4">
+<h4>Assessment of Model Fit</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">reproduce_model_fit_statistics_CORRECTNESS</span>(), <span class="dt">caption =</span> <span class="st">&quot;Model fit statistics for CORRECTNESS&quot;</span>)
+<span class="co">#&gt; Warning: 'r.squaredGLMM' now calculates a revised statistic. See the help</span>
+<span class="co">#&gt; page.</span></code></pre></div>
+<table>
+<caption>Model fit statistics for CORRECTNESS</caption>
+<thead>
+<tr class="header">
+<th align="right">R2m</th>
+<th align="right">R2c</th>
+<th align="right">AIC</th>
+<th align="right">BIC</th>
+<th align="right">LL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">25.68</td>
+<td align="right">63.45</td>
+<td align="right">438.01</td>
+<td align="right">450.83</td>
+<td align="right">-214.01</td>
 </tr>
 </tbody>
 </table>
@@ -366,6 +434,169 @@ Fig. 5. Violin plots for COMPLETENESS at both levels of Task Description Granula
 Fig. 6. Boxplots for COMPLETENESS shown separately on different tasks and sequences. Data points are indicated as dots grouped into bins of width 5. Horizontal lines within the plots indicate 0.25, 0.50 and 0.75 quantiles
 </p>
 </div>
+</div>
+<div id="linear-mixed-effects-model-1" class="section level4">
+<h4>Linear Mixed-effects Model</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">reproduce_lmm_COMPLETENESS</span>()
+<span class="co">#&gt; Linear mixed-effects model fit by maximum likelihood</span>
+<span class="co">#&gt;   Data: reproducerTaskGra::data_experiment </span>
+<span class="co">#&gt;   Log-likelihood: -102.596</span>
+<span class="co">#&gt;   Fixed: asinTransform(COMP) ~ TASK_GRA + </span><span class="al">TASK</span><span class="co"> </span>
+<span class="co">#&gt;           (Intercept) TASK_GRAfiner-grained                TASKMR </span>
+<span class="co">#&gt;             1.7640573             0.3255256            -0.6586320 </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Random effects:</span>
+<span class="co">#&gt;  Formula: ~1 | ParticipantID</span>
+<span class="co">#&gt;         (Intercept)  Residual</span>
+<span class="co">#&gt; StdDev:   0.5463474 0.5298133</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Number of Observations: 96</span>
+<span class="co">#&gt; Number of Groups: 48</span>
+knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">reproduce_estimates_COMPLETENESS</span>(), <span class="dt">caption =</span> <span class="st">&quot;Estimates of fixed effects for COMPLETENESS&quot;</span>)</code></pre></div>
+<table>
+<caption>Estimates of fixed effects for COMPLETENESS</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Value</th>
+<th align="right">Std.Error</th>
+<th align="right">DF</th>
+<th align="right">t-value</th>
+<th align="right">p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(Intercept)</td>
+<td align="right">1.7640573</td>
+<td align="right">0.1254457</td>
+<td align="right">47</td>
+<td align="right">14.062317</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td>TASK_GRAfiner-grained</td>
+<td align="right">0.3255256</td>
+<td align="right">0.1099737</td>
+<td align="right">46</td>
+<td align="right">2.960032</td>
+<td align="right">0.0048495</td>
+</tr>
+<tr class="odd">
+<td>TASKMR</td>
+<td align="right">-0.6586320</td>
+<td align="right">0.1099737</td>
+<td align="right">46</td>
+<td align="right">-5.988997</td>
+<td align="right">0.0000003</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="hypothesis-tests-1" class="section level4">
+<h4>Hypothesis Tests</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">reproduce_hypothesis_testing_COMPLETENESS</span>(), <span class="dt">caption =</span> <span class="st">&quot;Tests of fixed effects for COMPLETENESS&quot;</span>)</code></pre></div>
+<table>
+<caption>Tests of fixed effects for COMPLETENESS</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">numDF</th>
+<th align="right">denDF</th>
+<th align="right">F-value</th>
+<th align="right">p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(Intercept)</td>
+<td align="right">1</td>
+<td align="right">47</td>
+<td align="right">204.127739</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td>TASK_GRA</td>
+<td align="right">1</td>
+<td align="right">46</td>
+<td align="right">9.044428</td>
+<td align="right">0.0042611</td>
+</tr>
+<tr class="odd">
+<td>TASK</td>
+<td align="right">1</td>
+<td align="right">46</td>
+<td align="right">37.025120</td>
+<td align="right">0.0000002</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="confidence-intervals-1" class="section level4">
+<h4>Confidence Intervals</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">reproduce_confidence_intervals_COMPLETENESS</span>(), <span class="dt">caption =</span> <span class="st">&quot;Confidence intervals for estimates of fixed effects for COMPLETENESS&quot;</span>)</code></pre></div>
+<table>
+<caption>Confidence intervals for estimates of fixed effects for COMPLETENESS</caption>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="right">Estimate</th>
+<th align="right">SE</th>
+<th align="left">95% CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">1.76</td>
+<td align="right">0.13</td>
+<td align="left">(1.52, 2.01)</td>
+</tr>
+<tr class="even">
+<td align="left">TASK_GRAfiner-grained</td>
+<td align="right">0.33</td>
+<td align="right">0.11</td>
+<td align="left">(0.11, 0.54)</td>
+</tr>
+<tr class="odd">
+<td align="left">TASKMR</td>
+<td align="right">-0.66</td>
+<td align="right">0.11</td>
+<td align="left">(-0.88, -0.44)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="effect-size-1" class="section level4">
+<h4>Effect Size</h4>
+</div>
+<div id="assessment-of-model-validity-1" class="section level4">
+<h4>Assessment of Model Validity</h4>
+</div>
+<div id="assessment-of-model-fit-1" class="section level4">
+<h4>Assessment of Model Fit</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">reproduce_model_fit_statistics_COMPLETENESS</span>(), <span class="dt">caption =</span> <span class="st">&quot;Model fit statistics for COMPLETENESS&quot;</span>)</code></pre></div>
+<table>
+<caption>Model fit statistics for COMPLETENESS</caption>
+<thead>
+<tr class="header">
+<th align="right">R2m</th>
+<th align="right">R2c</th>
+<th align="right">AIC</th>
+<th align="right">BIC</th>
+<th align="right">LL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">19.56</td>
+<td align="right">61.02</td>
+<td align="right">215.19</td>
+<td align="right">228.01</td>
+<td align="right">-102.6</td>
+</tr>
+</tbody>
+</table>
 <p>(<a href="http://eatdd.oulu.fi">Project Website</a>)</p>
 </div>
 </div>

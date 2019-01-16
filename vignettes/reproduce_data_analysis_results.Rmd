@@ -53,15 +53,27 @@ reproduce_boxplot_CORRECTNESS()
 #### Linear Mixed-effects Model
 ```{r}
 reproduce_lmm_CORRECTNESS()
-knitr::kable(reproduce_estimates_CORRECTNESS(), caption = "TABLE 6 Estimates of fixed effects for CORRECTNESS")
+knitr::kable(reproduce_estimates_CORRECTNESS(), caption = "Estimates of fixed effects for CORRECTNESS")
 ```
 
 ####  Hypothesis Tests
 ```{r}
-knitr::kable(reproduce_hypothesis_testing_CORRECTNESS(), caption = "TABLE 7 Tests of fixed effects for CORRECTNESS")
+knitr::kable(reproduce_hypothesis_testing_CORRECTNESS(), caption = "Tests of fixed effects for CORRECTNESS")
+```
+
+####  Confidence Intervals
+```{r}
+knitr::kable(reproduce_confidence_intervals_CORRECTNESS(), caption = "Confidence intervals for estimates of fixed effects for CORRECTNESS")
 ```
 
 ####  Effect Size
+
+#### Assessment of Model Validity
+
+#### Assessment of Model Fit
+```{r}
+knitr::kable(reproduce_model_fit_statistics_CORRECTNESS(), caption = "Model fit statistics for CORRECTNESS")
+```
 
 
 ### Functional Completeness
@@ -81,5 +93,29 @@ reproduce_violin_plot_COMPLETENESS()
 reproduce_boxplot_COMPLETENESS()
 ```
 
+#### Linear Mixed-effects Model
+```{r}
+reproduce_lmm_COMPLETENESS()
+knitr::kable(reproduce_estimates_COMPLETENESS(), caption = "Estimates of fixed effects for COMPLETENESS")
+```
+
+####  Hypothesis Tests
+```{r}
+knitr::kable(reproduce_hypothesis_testing_COMPLETENESS(), caption = "Tests of fixed effects for COMPLETENESS")
+```
+
+####  Confidence Intervals
+```{r}
+knitr::kable(reproduce_confidence_intervals_COMPLETENESS(), caption = "Confidence intervals for estimates of fixed effects for COMPLETENESS")
+```
+
+####  Effect Size
+
+#### Assessment of Model Validity
+
+#### Assessment of Model Fit
+```{r}
+knitr::kable(reproduce_model_fit_statistics_COMPLETENESS(), caption = "Model fit statistics for COMPLETENESS")
+```
 
 ([Project Website](http://eatdd.oulu.fi))
