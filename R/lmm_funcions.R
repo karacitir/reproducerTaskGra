@@ -6,7 +6,9 @@
 #'
 #' @examples reproduce_lmm_CORRECTNESS()
 reproduce_lmm_CORRECTNESS <- function() {
-  lmm_CORRECTNESS <- nlme::lme(sqrt(COR) ~ TASK_GRA + TASK, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS <- nlme::lme(sqrt(COR) ~ TASK_GRA + TASK,
+                               data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                               method = "ML")
   lmm_CORRECTNESS
 }
 
@@ -17,7 +19,9 @@ reproduce_lmm_CORRECTNESS <- function() {
 #'
 #' @examples reproduce_lmm_CORRECTNESS_1()
 reproduce_lmm_CORRECTNESS_1 <- function() {
-  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ 1, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ 1,
+                                 data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                                 method = "ML")
   lmm_CORRECTNESS_X
 }
 
@@ -28,7 +32,9 @@ reproduce_lmm_CORRECTNESS_1 <- function() {
 #'
 #' @examples reproduce_lmm_CORRECTNESS_2()
 reproduce_lmm_CORRECTNESS_2 <- function() {
-  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA,
+                                 data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                                 method = "ML")
   lmm_CORRECTNESS_X
 }
 
@@ -39,7 +45,9 @@ reproduce_lmm_CORRECTNESS_2 <- function() {
 #'
 #' @examples reproduce_lmm_CORRECTNESS_3()
 reproduce_lmm_CORRECTNESS_3 <- function() {
-  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + TASK, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + TASK, data = reproducerTaskGra::data_experiment,
+                                 random = ~ 1 | ParticipantID,
+                                 method = "ML")
   lmm_CORRECTNESS_X
 }
 
@@ -50,7 +58,9 @@ reproduce_lmm_CORRECTNESS_3 <- function() {
 #'
 #' @examples reproduce_lmm_CORRECTNESS_4()
 reproduce_lmm_CORRECTNESS_4 <- function() {
-  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + TASK + SEQUENCE, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + TASK + SEQUENCE,
+                                 data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                                 method = "ML")
   lmm_CORRECTNESS_X
 }
 
@@ -61,7 +71,9 @@ reproduce_lmm_CORRECTNESS_4 <- function() {
 #'
 #' @examples reproduce_lmm_CORRECTNESS_5()
 reproduce_lmm_CORRECTNESS_5 <- function() {
-  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + TASK + EXP_PROGRAMMING, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + TASK + EXP_PROGRAMMING,
+                                 data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                                 method = "ML")
   lmm_CORRECTNESS_X
 }
 
@@ -83,7 +95,9 @@ reproduce_lmm_CORRECTNESS_6 <- function() {
 #'
 #' @examples reproduce_lmm_CORRECTNESS_7()
 reproduce_lmm_CORRECTNESS_7 <- function() {
-  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + + EXP_JAVA + EXP_UNIT_TESTING_LEVEL, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + TASK + EXP_JAVA + EXP_UNIT_TESTING_LEVEL,
+                                 data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                                 method = "ML")
   lmm_CORRECTNESS_X
 }
 
@@ -94,7 +108,9 @@ reproduce_lmm_CORRECTNESS_7 <- function() {
 #'
 #' @examples reproduce_lmm_CORRECTNESS_8()
 reproduce_lmm_CORRECTNESS_8 <- function() {
-  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + EXP_JAVA + EXP_TDD_LEVEL, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
+  lmm_CORRECTNESS_X <- nlme::lme(sqrt(COR) ~ TASK_GRA + TASK + EXP_JAVA + EXP_TDD_LEVEL,
+                                 data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                                 method = "ML")
   lmm_CORRECTNESS_X
 }
 
@@ -187,6 +203,110 @@ reproduce_model_fit_statistics_CORRECTNESS <- function() {
 reproduce_lmm_COMPLETENESS <- function() {
   lmm_COMPLETENESS <- nlme::lme(asinTransform(COMP) ~ TASK_GRA + TASK, data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID, method = "ML")
   lmm_COMPLETENESS
+}
+
+#' Reproduce alternative lmm model 1 for Completeness
+#'
+#' @return an object of class lme which represents the Model 1 for Completeness
+#' @export
+#'
+#' @examples reproduce_lmm_COMPLETENESS_1()
+reproduce_lmm_COMPLETENESS_1 <- function() {
+  lmm_COMPLETENESS_X <- nlme::lme(asinTransform(COMP) ~ 1,
+                                  data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                                  method = "ML")
+  lmm_COMPLETENESS_X
+}
+
+#' Reproduce alternative lmm model 2 for Completeness
+#'
+#' @return an object of class lme which represents the Model 2 for Completeness
+#' @export
+#'
+#' @examples reproduce_lmm_COMPLETENESS_2()
+reproduce_lmm_COMPLETENESS_2 <- function() {
+  lmm_COMPLETENESS_X <- nlme::lme(asinTransform(COMP) ~ TASK_GRA,
+                                  data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                                  method = "ML")
+  lmm_COMPLETENESS_X
+}
+
+#' Reproduce alternative lmm model 3 for Completeness
+#'
+#' @return an object of class lme which represents the Model 3 for Completeness
+#' @export
+#'
+#' @examples reproduce_lmm_COMPLETENESS_3()
+reproduce_lmm_COMPLETENESS_3 <- function() {
+  lmm_COMPLETENESS_X <- nlme::lme(asinTransform(COMP) ~ TASK_GRA + TASK,
+                                  data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                                  method = "ML")
+  lmm_COMPLETENESS_X
+}
+
+#' Reproduce alternative lmm model 4 for Completeness
+#'
+#' @return an object of class lme which represents the Model 4 for Completeness
+#' @export
+#'
+#' @examples reproduce_lmm_COMPLETENESS_4()
+reproduce_lmm_COMPLETENESS_4 <- function() {
+  lmm_COMPLETENESS_X <- nlme::lme(asinTransform(COMP) ~ TASK_GRA + TASK + SEQUENCE,
+                                  data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                                  method = "ML")
+  lmm_COMPLETENESS_X
+}
+
+#' Reproduce alternative lmm model 5 for Completeness
+#'
+#' @return an object of class lme which represents the Model 5 for Completeness
+#' @export
+#'
+#' @examples reproduce_lmm_COMPLETENESS_5()
+reproduce_lmm_COMPLETENESS_5 <- function() {
+  lmm_COMPLETENESS_X <- nlme::lme(asinTransform(COMP) ~ TASK_GRA + TASK + EXP_PROGRAMMING,
+                                  data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                                  method = "ML")
+  lmm_COMPLETENESS_X
+}
+
+#' Reproduce alternative lmm model 6 for Completeness
+#'
+#' @return an object of class lme which represents the Model 6 for Completeness
+#' @export
+#'
+#' @examples reproduce_lmm_COMPLETENESS_6()
+reproduce_lmm_COMPLETENESS_6 <- function() {
+  lmm_COMPLETENESS_X <- nlme::lme(asinTransform(COMP) ~ TASK_GRA + TASK + EXP_JAVA,
+                                  data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                                  method = "ML")
+  lmm_COMPLETENESS_X
+}
+
+#' Reproduce alternative lmm model 7 for Completeness
+#'
+#' @return an object of class lme which represents the Model 7 for Completeness
+#' @export
+#'
+#' @examples reproduce_lmm_COMPLETENESS_7()
+reproduce_lmm_COMPLETENESS_7 <- function() {
+  lmm_COMPLETENESS_X <- nlme::lme(asinTransform(COMP) ~ TASK_GRA + TASK + EXP_JAVA + EXP_UNIT_TESTING_LEVEL,
+                                  data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                                  method = "ML")
+  lmm_COMPLETENESS_X
+}
+
+#' Reproduce alternative lmm model 8 for Completeness
+#'
+#' @return an object of class lme which represents the Model 8 for Completeness
+#' @export
+#'
+#' @examples reproduce_lmm_COMPLETENESS_8()
+reproduce_lmm_COMPLETENESS_8 <- function() {
+  lmm_COMPLETENESS_X <- nlme::lme(asinTransform(COMP) ~ TASK_GRA + TASK + EXP_JAVA + EXP_TDD_LEVEL,
+                                  data = reproducerTaskGra::data_experiment, random = ~ 1 | ParticipantID,
+                                  method = "ML")
+  lmm_COMPLETENESS_X
 }
 
 #' Reproduce the estimates for fixed effects for Completeness
