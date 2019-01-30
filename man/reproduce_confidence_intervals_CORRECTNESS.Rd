@@ -2,7 +2,7 @@
 % Please edit documentation in R/lmm_funcions.R
 \name{reproduce_confidence_intervals_CORRECTNESS}
 \alias{reproduce_confidence_intervals_CORRECTNESS}
-\title{Reproduce the confidence intervals for estimates of fixed effects for CORRECTNESS}
+\title{Reproduce the confidence intervals for estimates of fixed effects for Correctness}
 \usage{
 reproduce_confidence_intervals_CORRECTNESS()
 }
@@ -11,7 +11,7 @@ a data frame with parameter name, estimate of fixed effect, standard error and
 95% confidence interval limits
 }
 \description{
-Reproduce the confidence intervals for estimates of fixed effects for CORRECTNESS
+Reproduce the confidence intervals for estimates of fixed effects for Correctness
 }
 \examples{
 reproduce_confidence_intervals_CORRECTNESS()

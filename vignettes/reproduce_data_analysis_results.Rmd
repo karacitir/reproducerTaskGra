@@ -68,13 +68,29 @@ knitr::kable(reproduce_confidence_intervals_CORRECTNESS(), caption = "Confidence
 
 ####  Effect Size
 
-#### Assessment of Model Validity
+#####  Esmated Marginal Means
+```{r}
+knitr::kable(reproduce_emmeans_CORRECTNESS(), caption = "Estimated Marginal Means for CORRECTNESS")
+```
 
-#### Assessment of Model Fit
+
+#####  Effect Size Based on Esmated Marginal Means
+```{r}
+knitr::kable(reproduce_emeans_effect_size_CORRECTNESS(), caption = "Effect Size Based on Estimated Marginal Means")
+```
+```{r, fig.cap = "Fig. 7. Profile plots of estimated marginal means for CORRECTNESS"}
+reproduce_emmeans_profileplot_CORRECTNESS()
+```
+
+
+#### Assessment of Model Validity and Fit
+
+##### Model Fit
 ```{r}
 knitr::kable(reproduce_model_fit_statistics_CORRECTNESS(), caption = "Model fit statistics for CORRECTNESS")
 ```
 
+##### Comparison of Alternative Models
 
 ### Functional Completeness
 
@@ -110,12 +126,27 @@ knitr::kable(reproduce_confidence_intervals_COMPLETENESS(), caption = "Confidenc
 ```
 
 ####  Effect Size
+#####  Esmated Marginal Means
+```{r}
+knitr::kable(reproduce_emmeans_COMPLETENESS(), caption = "Estimated Marginal Means for COMPLETENESS")
+```
 
-#### Assessment of Model Validity
+#####  Effect Size Based on Esmated Marginal Means
+```{r}
+knitr::kable(reproduce_emeans_effect_size_COMPLETENESS(), caption = "Effect Size Based on Estimated Marginal Means")
+```
 
-#### Assessment of Model Fit
+```{r, fig.cap = "Fig. 7. Profile plots of estimated marginal means for COMPLETENESS"}
+reproduce_emmeans_profileplot_COMPLETENESS()
+```
+
+#### Assessment of Model Validity and Fit
+
+##### Model Fit
 ```{r}
 knitr::kable(reproduce_model_fit_statistics_COMPLETENESS(), caption = "Model fit statistics for COMPLETENESS")
 ```
+
+##### Comparison of Alternative Models
 
 ([Project Website](http://eatdd.oulu.fi))

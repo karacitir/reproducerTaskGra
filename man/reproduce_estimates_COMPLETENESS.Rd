@@ -7,8 +7,9 @@
 reproduce_estimates_COMPLETENESS()
 }
 \value{
-a data frame which contains the estimates for fixed effects Task and Task Description Granularity
-obtained with the the linear mixed-effects model fit for Completeness
+a data frame which contains the estimates for fixed effects Task and
+Task Description Granularity obtained with the the linear mixed-effects model fit
+for Completeness
 }
 \description{
 Reproduce the estimates for fixed effects for Completeness

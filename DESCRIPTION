@@ -24,7 +24,8 @@ Imports:
     ggplot2,
     tidyr,
     tibble,
-    gridExtra
+    gridExtra,
+    emmeans
 URL: https://github.com/M3SOulu/reproducerTaskGra
 BugReports: https://github.com/M3SOulu/reproducerTaskGra/issues
 VignetteBuilder: knitr

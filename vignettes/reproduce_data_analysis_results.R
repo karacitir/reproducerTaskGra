@@ -31,6 +31,15 @@ knitr::kable(reproduce_hypothesis_testing_CORRECTNESS(), caption = "Tests of fix
 knitr::kable(reproduce_confidence_intervals_CORRECTNESS(), caption = "Confidence intervals for estimates of fixed effects for CORRECTNESS")
 
 ## ------------------------------------------------------------------------
+knitr::kable(reproduce_emmeans_CORRECTNESS(), caption = "Estimated Marginal Means for CORRECTNESS")
+
+## ------------------------------------------------------------------------
+knitr::kable(reproduce_emeans_effect_size_CORRECTNESS(), caption = "Effect Size Based on Estimated Marginal Means")
+
+## ---- fig.cap = "Fig. 7. Profile plots of estimated marginal means for CORRECTNESS"----
+reproduce_emmeans_profileplot_CORRECTNESS()
+
+## ------------------------------------------------------------------------
 knitr::kable(reproduce_model_fit_statistics_CORRECTNESS(), caption = "Model fit statistics for CORRECTNESS")
 
 ## ----descriptive_stats_COMP----------------------------------------------
@@ -51,6 +60,15 @@ knitr::kable(reproduce_hypothesis_testing_COMPLETENESS(), caption = "Tests of fi
 
 ## ------------------------------------------------------------------------
 knitr::kable(reproduce_confidence_intervals_COMPLETENESS(), caption = "Confidence intervals for estimates of fixed effects for COMPLETENESS")
+
+## ------------------------------------------------------------------------
+knitr::kable(reproduce_emmeans_COMPLETENESS(), caption = "Estimated Marginal Means for COMPLETENESS")
+
+## ------------------------------------------------------------------------
+knitr::kable(reproduce_emeans_effect_size_COMPLETENESS(), caption = "Effect Size Based on Estimated Marginal Means")
+
+## ---- fig.cap = "Fig. 7. Profile plots of estimated marginal means for COMPLETENESS"----
+reproduce_emmeans_profileplot_COMPLETENESS()
 
 ## ------------------------------------------------------------------------
 knitr::kable(reproduce_model_fit_statistics_COMPLETENESS(), caption = "Model fit statistics for COMPLETENESS")

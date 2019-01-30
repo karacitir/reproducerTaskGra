@@ -169,3 +169,58 @@ create_boxplot <- function(data_plot, x_variable, y_variable, facet_variable, if
   h
 }
 
+#' Creates the profile plots from the estimated marginal means
+#'
+#' @param data_plot a data_frame containing the estimated marginal means for each level of x_variable and group_variable
+#' @param x_variable column name in data_plot that contains the factor for x-axis, e.g. "TASK_GRA"
+#' @param y_variable column name in data_plot that contains the estimated marginal means
+#' @param group_variable column name in data_plot that contains the factor for which seperate profile plots will be shown for each level
+#'
+#' @return a ggplot object containing the profile plot
+#' @export
+#'
+#' @examples emmeans_CORRECTNESS <- reproduce_emmeans_CORRECTNESS()
+#' create_emmeans_profileplot(data_plot= emmeans_CORRECTNESS,
+#' x_variable="TASK_GRA", y_variable="emmean", group_variable="TASK")
+create_emmeans_profileplot <- function(data_plot, x_variable="TASK_GRA", y_variable="emmean", group_variable="TASK") {
+
+  ymin <- 10
+  ymax <- 100
+
+  plotLabels <- list(COR = "CORRECTNESS", COMP="COMPLETENESS", TASK="Task",
+                     TASK_GRA="Task Description Granularity", CONF = "TDD-conformance",
+                     TESTS="Number of Tests", EPISODES = "Number of Episodes",
+                     QLTY = "Quality", EXP_JAVA = "Experience in Java")
+
+  profilePlot <- ggplot(data=data_plot, aes_string(x=x_variable, y=y_variable)) +
+    ggplot2::theme_minimal() +
+    ggplot2::theme(axis.text.x = element_text(size=8),
+                   axis.text.y = element_text(size=8),
+                   axis.title.x = element_text(size=8),
+                   axis.title.y = element_text(size=8)) +
+    ggplot2::geom_line(aes_string(color=group_variable, group=group_variable)) +
+    ggplot2::geom_point(aes_string(shape=group_variable, color=group_variable), size=2) +
+    ggplot2::xlab(plotLabels[[x_variable]]) + ggplot2::ylab("Estimated Marginal Means") +
+    ggplot2::scale_y_continuous(breaks = seq(ymin, ymax, 10), expand = c(0.1,0.1)) +
+    ggplot2::theme(legend.direction="horizontal",
+          legend.margin= unit(0,"lines"),
+          legend.background = element_rect(colour = NA),
+          legend.key = element_blank(),
+          legend.title = element_blank(),
+          legend.justification = c(0.01, 1),
+          legend.position = c(0.01, 0.99),
+          plot.background=element_rect(fill=NA))
+
+  profilePlot
+}
+
+#' Reproduce the profile plots of estimated marginal means for Correctness
+#'
+#' @return a ggplot object containing the profile plot of estimated marginal means for Correctness
+#' @export
+#'
+#' @examples create_emmeans_profileplot_CORRECTNESS()
+create_emmeans_profileplot_CORRECTNESS <- function() {
+  emmeans_CORRECTNESS <- reproduce_emmeans_CORRECTNESS()
+  create_emmeans_profileplot(emmeans_CORRECTNESS)
+}
