@@ -82,7 +82,6 @@ knitr::kable(reproduce_emeans_effect_size_CORRECTNESS(), caption = "Effect Size 
 reproduce_emmeans_profileplot_CORRECTNESS()
 ```
 
-
 #### Assessment of Model Validity and Fit
 
 ##### Model Fit
