@@ -203,7 +203,7 @@ create_emmeans_profileplot <- function(data_plot, x_variable="TASK_GRA", y_varia
     ggplot2::xlab(plotLabels[[x_variable]]) + ggplot2::ylab("Estimated Marginal Means") +
     ggplot2::scale_y_continuous(breaks = seq(ymin, ymax, 10), expand = c(0.1,0.1)) +
     ggplot2::theme(legend.direction="horizontal",
-          legend.margin= unit(0,"lines"),
+          legend.margin= margin(t = 0, r = 0, b = 0, l = 0, unit = "lines"),
           legend.background = element_rect(colour = NA),
           legend.key = element_blank(),
           legend.title = element_blank(),
@@ -219,8 +219,19 @@ create_emmeans_profileplot <- function(data_plot, x_variable="TASK_GRA", y_varia
 #' @return a ggplot object containing the profile plot of estimated marginal means for Correctness
 #' @export
 #'
-#' @examples create_emmeans_profileplot_CORRECTNESS()
-create_emmeans_profileplot_CORRECTNESS <- function() {
+#' @examples reproduce_emmeans_profileplot_CORRECTNESS()
+reproduce_emmeans_profileplot_CORRECTNESS <- function() {
   emmeans_CORRECTNESS <- reproduce_emmeans_CORRECTNESS()
   create_emmeans_profileplot(emmeans_CORRECTNESS)
+}
+
+#' Reproduce the profile plots of estimated marginal means for Completeness
+#'
+#' @return a ggplot object containing the profile plot of estimated marginal means for Completeness
+#' @export
+#'
+#' @examples reproduce_emmeans_profileplot_COMPLETENESS()
+reproduce_emmeans_profileplot_COMPLETENESS <- function() {
+  emmeans_COMPLETENESS <- reproduce_emmeans_COMPLETENESS()
+  create_emmeans_profileplot(emmeans_COMPLETENESS)
 }

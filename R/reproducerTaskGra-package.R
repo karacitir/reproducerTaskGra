@@ -7,7 +7,8 @@
 #' @importFrom ggplot2 scale_fill_brewer
 #' @importFrom ggplot2 theme theme_minimal
 #' @importFrom ggplot2 position_dodge2
-#' @importFrom ggplot2 element_blank element_text element_rect unit
+#' @importFrom ggplot2 element_blank element_text element_rect
+#' @importFrom ggplot2 margin unit
 #' @importFrom ggplot2 xlab ylab stat_summary
 #' @importFrom ggplot2 facet_grid
 #' @importFrom gridExtra grid.arrange
